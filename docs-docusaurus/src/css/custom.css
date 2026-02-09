@@ -1,0 +1,792 @@
+/**
+ * MCE Architecture Docs - Tailwind CSS + GitBook Hybrid Design
+ * Design System: "Beautifully minimal" - Tailwind's crisp minimalism + GitBook's interactivity
+ */
+
+/* ===========================================
+   CSS Reset - Modern Normalize
+   =========================================== */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4, h5, h6,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* ===========================================
+   Font Imports
+   =========================================== */
+
+/* Operator Mono - All weights (200, 300, 400, 500, 700) */
+@import './fonts/operator-mono.css';
+
+/* Geist Sans - Variable font (weights 100-900) */
+@import './fonts/geist.css';
+
+/* Geist Mono - Variable font (weights 100-900) */
+@import './fonts/geist-mono.css';
+
+/* Geist Pixel - Square variant */
+@import './fonts/geist-pixel.css';
+
+/* ===========================================
+   Design Tokens & CSS Variables
+   =========================================== */
+
+:root {
+  /* ===========================================
+     MCE Brand Colors - Official Palette
+     =========================================== */
+  
+  /* Primary Colors */
+  --mce-black: #1B1C1E;
+  --mce-dark-purple: #0B0321;
+  --mce-light-blue: #342FB0;
+  --mce-white: #FFFFFF;
+  --mce-magenta: #f025b0;
+  
+  /* Secondary Colors */
+  --mce-purple: #746DD4;
+  --mce-yellow: #FFBF00;
+  --mce-dark-blue: #00009F;
+  --mce-light-grey: #F6F7F9;
+  
+  /* Color Palette - Following 60/30/10 Rule */
+  /* 60% Primary, 30% Secondary, 10% Accent */
+  --color-bg-primary: var(--mce-white);
+  --color-bg-secondary: var(--mce-light-grey);
+  --color-bg-dark: var(--mce-dark-purple);
+  --color-bg-dark-secondary: var(--mce-black);
+  
+  --color-text-primary: var(--mce-black);
+  --color-text-secondary: var(--mce-purple);
+  --color-text-accented: var(--mce-magenta);
+  --color-text-dark: var(--mce-white);
+  --color-text-dark-secondary: var(--mce-light-grey);
+  
+  /* Accent Colors - 10% usage */
+  --color-accent-primary: var(--mce-light-blue);  /* Primary accent */
+  --color-accent-secondary: var(--mce-purple);    /* Secondary accent */
+  --color-accent-highlight: var(--mce-yellow);    /* Highlight/warning */
+  --color-accent-dark-blue: var(--mce-dark-blue);
+  
+  /* Typography - Geist Font Family */
+  --font-body: 'Geist', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Operator Mono', 'Geist Mono', 'ui-monospace', monospace;
+  --font-mono-terminal: 'Geist Pixel', 'Operator Mono', 'ui-monospace', monospace;
+  
+  /* Typography Scale */
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.5rem;
+  --font-size-h3: 1.25rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+  
+  --font-weight-black: 900;
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-normal: 400;
+  
+  --line-height-body: 1.65;
+  --line-height-heading: 1.2;
+  
+  /* Spacing - Generous white space */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Layout */
+  --sidebar-width: 20%;
+  --content-width: 60%;
+  --toc-width: 20%;
+  --max-content-width: 70ch;  /* Optimal reading width */
+  
+  /* Transitions - Subtle animations */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  
+  /* Shadows - Minimal */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* Borders */
+  --border-color: var(--mce-light-grey);
+  --border-width: 1px;
+  --border-radius: 0.375rem;
+  
+  /* Brand Gradients */
+  --gradient-blue: linear-gradient(135deg, var(--mce-dark-purple), var(--mce-light-blue));
+  --gradient-dark-purple: linear-gradient(135deg, var(--mce-dark-purple), var(--mce-purple));
+  --gradient-light-purple: linear-gradient(135deg, var(--mce-purple), var(--mce-light-blue));
+  --gradient-yellow: linear-gradient(135deg, var(--mce-yellow), #FFD810);
+}
+
+[data-theme='dark'] {
+  /* Dark theme uses Dark Purple as primary (60%) */
+  --color-bg-primary: var(--mce-dark-purple);
+  --color-bg-secondary: var(--mce-black);
+  --color-text-primary: var(--mce-white);
+  --color-text-secondary: rgba(255, 255, 255, 0.8);
+  --color-text-accented: var(--mce-yellow);
+  --border-color: rgba(255, 255, 255, 0.15);
+  
+  /* Replace light-blue with purple in dark mode */
+  --color-accent-primary: var(--mce-purple);
+  
+  /* Dark mode specific adjustments */
+  --ifm-background-color: var(--mce-dark-purple);
+  --ifm-background-surface-color: var(--mce-black);
+  --ifm-color-content: var(--mce-white);
+  --ifm-color-content-secondary: rgba(255, 255, 255, 0.8);
+  --ifm-navbar-background-color: var(--mce-dark-purple);
+  --ifm-footer-background-color: var(--mce-black);
+  --ifm-sidebar-background-color: var(--mce-dark-purple);
+  --ifm-code-background: rgba(0, 0, 0, 0.3);
+  --ifm-table-border-color: rgba(255, 255, 255, 0.1);
+  --ifm-hr-border-color: rgba(255, 255, 255, 0.1);
+  --ifm-color-primary: var(--mce-purple);
+}
+
+/* ===========================================
+   Base Typography - Tailwind-inspired
+   =========================================== */
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: var(--line-height-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure initial theme state is set correctly */
+/* Docusaurus handles initial theme via data-theme attribute */
+html[data-theme='light'],
+html:not([data-theme]) {
+  --color-bg-primary: var(--mce-white);
+  --color-text-primary: var(--mce-black);
+}
+
+html[data-theme='dark'] {
+  --color-bg-primary: var(--mce-dark-purple);
+  --color-text-primary: var(--mce-white);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography Hierarchy */
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-heading);
+  margin-top: 0;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-accented);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-primary);
+}
+
+p {
+  margin-bottom: var(--spacing-lg);
+  max-width: var(--max-content-width);
+  line-height: var(--line-height-body);
+}
+
+/* Code Typography */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: var(--color-bg-secondary);
+  padding: 0.125rem 0.25rem;
+  border-radius: var(--border-radius);
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] code {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: var(--mce-purple);
+}
+
+pre {
+  font-family: var(--font-mono);
+  background-color: var(--mce-dark-purple);
+  color: var(--mce-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  overflow-x: auto;
+  margin: var(--spacing-lg) 0;
+  line-height: 1.5;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme='dark'] pre {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* ===========================================
+   Links - MCE Brand Colors
+   =========================================== */
+
+a {
+  color: var(--mce-light-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+[data-theme='dark'] a {
+  color: var(--mce-magenta);
+}
+
+a:hover {
+  color: var(--mce-purple);
+  text-decoration: underline;
+}
+
+[data-theme='dark'] a:hover {
+  color: var(--mce-yellow);
+}
+
+/* ===========================================
+   Search - Prominent, Full-width on Focus
+   =========================================== */
+
+.navbar__search {
+  flex: 1;
+  max-width: 600px;
+}
+
+.navbar__search-input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-body);
+  transition: all var(--transition-base);
+}
+
+.navbar__search-input:focus {
+  outline: none;
+  border-color: var(--mce-light-blue);
+  box-shadow: 0 0 0 3px rgba(52, 47, 176, 0.1);
+}
+
+[data-theme='dark'] .navbar__search-input:focus {
+  background-color: var(--mce-yellow);
+  border-color: var(--mce-purple);
+  box-shadow: 0 0 0 3px rgba(116, 109, 212, 0.2);
+}
+
+/* ===========================================
+   Animations - Subtle, Fade-ins
+   =========================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-base);
+}
+
+/* ===========================================
+   Dark Mode Transitions
+   =========================================== */
+
+/* Smooth theme switching - use shorter transitions for better UX */
+html {
+  transition: background-color 0.15s ease,
+              color 0.15s ease;
+}
+
+/* Apply transitions selectively to avoid performance issues */
+body,
+.navbar,
+.footer,
+.theme-doc-sidebar-container,
+code,
+pre {
+  transition: background-color 0.15s ease,
+              color 0.15s ease,
+              border-color 0.15s ease;
+}
+
+/* Links and interactive elements */
+a,
+.theme-doc-sidebar-item-link {
+  transition: color 0.15s ease,
+              background-color 0.15s ease;
+}
+
+/* Prevent transitions on theme toggle button to avoid lag */
+.navbar__item--color-mode-toggle button {
+  transition: border-color 0.15s ease,
+              background-color 0.15s ease,
+              color 0.15s ease !important;
+}
+
+/* ===========================================
+   Docusaurus Theme Overrides
+   =========================================== */
+
+:root,
+:root[data-theme='light'] {
+  /* Docusaurus Theme Colors - Using MCE Brand Colors */
+  --ifm-color-primary: var(--mce-light-blue);
+  --ifm-color-primary-dark: var(--mce-dark-blue);
+  --ifm-color-primary-darker: var(--mce-dark-purple);
+  --ifm-color-primary-darkest: var(--mce-black);
+  --ifm-color-primary-light: var(--mce-purple);
+  --ifm-color-primary-lighter: var(--mce-purple);
+  --ifm-color-primary-lightest: rgba(116, 109, 212, 0.1);
+  
+  --ifm-font-family-base: var(--font-body);
+  --ifm-font-family-monospace: 'Operator Mono', var(--font-mono);
+  --ifm-font-size-base: var(--font-size-body);
+  --ifm-line-height-base: var(--line-height-body);
+  
+  --ifm-heading-font-weight: var(--font-weight-semibold);
+  --ifm-heading-line-height: var(--line-height-heading);
+  
+  --ifm-spacing-horizontal: var(--spacing-lg);
+  --ifm-spacing-vertical: var(--spacing-xl);
+  
+  --ifm-code-font-size: 0.9em;
+  --ifm-code-background: var(--color-bg-secondary);
+  --ifm-code-border-radius: var(--border-radius);
+  
+  --ifm-navbar-height: 60px;
+  --ifm-navbar-padding-horizontal: var(--spacing-lg);
+  
+  --ifm-sidebar-width: 300px;
+  
+  --ifm-transition-fast: var(--transition-fast);
+  --ifm-transition-base: var(--transition-base);
+  --ifm-transition-slow: var(--transition-slow);
+  
+  --ifm-background-color: var(--mce-white);
+  --ifm-background-surface-color: var(--mce-light-grey);
+  --ifm-color-content: var(--mce-black);
+  --ifm-color-content-secondary: var(--mce-purple);
+}
+
+/* Override Docusaurus default styles - MCE Brand Colors */
+.docusaurus-highlight-code-line {
+  background-color: rgba(52, 47, 176, 0.1); /* Light Blue with opacity */
+}
+
+/* ===========================================
+   MCE Brand-Specific Styling
+   =========================================== */
+
+/* Navbar - Dark Purple background (60% primary) */
+.navbar {
+  background: var(--mce-dark-purple);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='light'] .navbar {
+  background: var(--mce-dark-purple);
+}
+
+[data-theme='dark'] .navbar {
+  background: var(--mce-dark-purple);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar__title {
+  color: var(--mce-white);
+}
+
+.navbar__logo {
+  filter: brightness(0) invert(1); /* Make logo white on dark background */
+}
+
+.navbar__item {
+  color: var(--mce-white);
+}
+
+.navbar__item:hover {
+  color: var(--mce-light-blue);
+}
+
+[data-theme='dark'] .navbar__item:hover {
+  color: var(--mce-purple);
+}
+
+/* Color Mode Toggle Button - Docusaurus auto-generates this */
+.navbar__item.navbar__item--color-mode-toggle {
+  margin-left: var(--spacing-md);
+}
+
+.navbar__item.navbar__item--color-mode-toggle button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  color: var(--mce-white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__item.navbar__item--color-mode-toggle button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--mce-light-blue);
+  color: var(--mce-light-blue);
+}
+
+[data-theme='dark'] .navbar__item.navbar__item--color-mode-toggle button:hover {
+  border-color: var(--mce-purple);
+  color: var(--mce-purple);
+}
+
+.navbar__item.navbar__item--color-mode-toggle button:focus {
+  outline: 2px solid var(--mce-light-blue);
+  outline-offset: 2px;
+}
+
+[data-theme='dark'] .navbar__item.navbar__item--color-mode-toggle button:focus {
+  outline-color: var(--mce-purple);
+}
+
+.navbar__item.navbar__item--color-mode-toggle button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Footer - Dark Purple background */
+.footer {
+  background: var(--mce-dark-purple);
+  color: var(--mce-white);
+}
+
+.footer__link-item {
+  color: var(--mce-light-grey);
+}
+
+.footer__link-item:hover {
+  color: var(--mce-light-blue);
+}
+
+[data-theme='dark'] .footer__link-item {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme='dark'] .footer__link-item:hover {
+  color: var(--mce-purple);
+}
+
+/* Sidebar - Light theme uses Light Grey (30% secondary) */
+.theme-doc-sidebar-container {
+  background: var(--mce-light-grey);
+  border-right: 1px solid var(--border-color);
+}
+
+/* Sidebar - Dark theme uses Dark Purple */
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background: var(--mce-dark-purple);
+  border-right-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar links */
+.theme-doc-sidebar-item-link {
+  color: var(--color-text-primary);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.theme-doc-sidebar-item-link:hover {
+  color: var(--mce-light-blue);
+  background-color: rgba(52, 47, 176, 0.05);
+}
+
+[data-theme='dark'] .theme-doc-sidebar-item-link:hover {
+  color: var(--mce-purple);
+  background-color: rgba(116, 109, 212, 0.15);
+}
+
+.theme-doc-sidebar-item-link--active {
+  color: var(--mce-light-blue);
+  font-weight: var(--font-weight-semibold);
+}
+
+[data-theme='dark'] .theme-doc-sidebar-item-link--active {
+  color: var(--mce-purple);
+  background-color: rgba(116, 109, 212, 0.2);
+}
+
+
+/* Links use brand accent colors (10% accent) */
+/* Note: Base link styles defined above, dark mode uses magenta */
+
+/* Highlighted code lines use Light Blue accent */
+.docusaurus-highlight-code-line {
+  background-color: rgba(52, 47, 176, 0.15); /* Light Blue with opacity */
+}
+
+[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(116, 109, 212, 0.2); /* Purple with opacity */
+}
+
+/* Buttons and interactive elements */
+.button--primary {
+  background: var(--mce-light-blue);
+  border-color: var(--mce-light-blue);
+}
+
+[data-theme='dark'] .button--primary {
+  background: var(--mce-purple);
+  border-color: var(--mce-purple);
+}
+
+.button--primary:hover {
+  background: var(--mce-purple);
+  border-color: var(--mce-purple);
+}
+
+[data-theme='dark'] .button--primary:hover {
+  background: var(--mce-light-blue);
+  border-color: var(--mce-light-blue);
+}
+
+/* Table of Contents */
+.table-of-contents__link {
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--mce-light-blue);
+}
+
+[data-theme='dark'] .table-of-contents__link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme='dark'] .table-of-contents__link:hover,
+[data-theme='dark'] .table-of-contents__link--active {
+  color: var(--mce-purple);
+}
+
+/* Main content area */
+.main-wrapper {
+  background-color: var(--color-bg-primary);
+}
+
+[data-theme='dark'] .main-wrapper {
+  background-color: var(--mce-dark-purple);
+}
+
+/* Markdown content */
+.markdown {
+  color: var(--color-text-primary);
+}
+
+[data-theme='dark'] .markdown {
+  color: var(--mce-white);
+}
+
+/* Markdown links inherit from base a styles (magenta in dark mode) */
+.markdown a {
+  color: var(--mce-light-blue);
+}
+
+[data-theme='dark'] .markdown a {
+  color: var(--mce-magenta);
+}
+
+.markdown a:hover {
+  color: var(--mce-purple);
+}
+
+[data-theme='dark'] .markdown a:hover {
+  color: var(--mce-yellow);
+}
+
+/* Tables */
+table {
+  border-color: var(--border-color);
+}
+
+[data-theme='dark'] table {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+thead {
+  background-color: var(--color-bg-secondary);
+}
+
+[data-theme='dark'] thead {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Horizontal rules */
+hr {
+  border-color: var(--border-color);
+}
+
+[data-theme='dark'] hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left-color: var(--mce-light-blue);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-secondary);
+}
+
+[data-theme='dark'] blockquote {
+  border-left-color: var(--mce-purple);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===========================================
+   Responsive - Mobile Stacking
+   =========================================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
+/* ===========================================
+   Accessibility - High Contrast, Keyboard Nav
+   =========================================== */
+
+:focus-visible {
+  outline: 2px solid var(--mce-light-blue);
+  outline-offset: 2px;
+}
+
+[data-theme='dark'] :focus-visible {
+  outline-color: var(--mce-purple);
+}
+
+/* Ensure 4.5:1 contrast ratio */
+a:not(:hover) {
+  color: var(--mce-light-blue);
+}
+
+[data-theme='dark'] a:not(:hover) {
+  color: var(--mce-magenta);
+}

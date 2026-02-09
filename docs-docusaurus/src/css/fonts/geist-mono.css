@@ -1,0 +1,21 @@
+/**
+ * Geist Mono - Complete font family
+ * Variable font supporting weights 100-900
+ */
+
+/* Geist Mono - Variable font (supports all weights 100-900) */
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/GeistMono-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('/fonts/GeistMono-Italic[wght].woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}

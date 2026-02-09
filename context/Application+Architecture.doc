@@ -1,0 +1,536 @@
+Date: Sun, 1 Feb 2026 13:08:22 +0000 (UTC)
+Message-ID: <1480764655.695.1769951302100@1cb90fa333f7>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_694_1951583801.1769951302100"
+
+------=_Part_694_1951583801.1769951302100
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Application Architecture</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font: var(--ds-font-body-small, Arial, Helvetica, FreeSans, sans-se=
+rif);
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: var(--ds-surface, #fff) !important;
+        color: var(--ds-text, #000) !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: var(--ds-text, #000);
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        page-break-after: avoid;
+    }
+
+    pre {
+        font: var(--ds-font-code, Monaco, "Courier New", monospace);
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Application Architecture</h1>
+    <div class=3D"Section1">
+        <blockquote local-id=3D"bfc1fc0a-0fef-4e93-a32e-3db8f0773fe6">
+<style>[data-colorid=3Dfeud6uae6l]{color:#97a0af} html[data-color-mode=3Dda=
+rk] [data-colorid=3Dfeud6uae6l]{color:#505968}[data-colorid=3Da2vohdkhkm]{c=
+olor:#97a0af} html[data-color-mode=3Ddark] [data-colorid=3Da2vohdkhkm]{colo=
+r:#505968}</style>
+<p local-id=3D"13d7408d-92df-4c5d-9e61-f90bf617bd90"><em>Reference</em></p>
+<p local-id=3D"f5be4173-efb9-4daa-884a-6b71e62b91d3">Develop a plan and a r=
+oadmap for the architecture for the new software eco-system to answer the a=
+forementioned business needs and be useful for the future.</p>
+<p local-id=3D"c97e2644-bb5b-49b0-b442-65da40b90fc8"><span class=3D"conflue=
+nce-jim-macro jira-issue" data-jira-key=3D"PROD-55583"> <a href=3D"https://=
+mcesys.atlassian.net/browse/PROD-55583" class=3D"jira-issue-key"><img class=
+=3D"icon" src=3D"https://mcesys.atlassian.net/rest/api/2/universal_avatar/v=
+iew/type/issuetype/avatar/13909?size=3Dmedium">PROD-55583</a> - <span class=
+=3D"summary">Architecture Approach</span> <span class=3D"aui-lozenge aui-lo=
+zenge-subtle aui-lozenge-current jira-macro-single-issue-export-pdf">Pendin=
+g</span> </span></p>
+</blockquote>
+<h2 local-id=3D"dc2bcd5a-1849-46ed-9158-56ab3a4f0cd0" id=3D"ApplicationArch=
+itecture-Motivation">Motivation</h2>
+<p local-id=3D"ca9591d6-b7b2-4c3c-96e5-b91c29851ed9">Together with MCE=E2=
+=80=99s special Metro Retail project, the R&amp;D department raised issues =
+of future-proofing MCE=E2=80=99s tech stack, application architecture, and =
+workflows =E2=80=94 both developer experience &amp; delivery-to-client. In =
+order for us to understand which parts should change, which should go, and =
+which should stay, we need to be able to research the reliance on the curre=
+nt stack and imagine workflows for the future.</p>
+<p local-id=3D"513e75a0-8c2d-4a9e-8280-99b382f72264">Main issues for discus=
+sion and research are:</p>
+<p local-id=3D"c4608b00-fea1-446d-902b-d13c64676dcb">=E2=80=94 <strong>The =
+big why</strong>: how do we envision our future work?</p>
+<p local-id=3D"2d68b68c-83a2-4f3c-ad22-9be33556b012">=E2=80=94 <strong>Clie=
+nt applications</strong>: architecture, deployment cycle, maintenance cycle=
+, extensibility, developer experience.</p>
+<p local-id=3D"cbe5ac78-a6f6-4fbc-98af-018c9731f7b0">=E2=80=94 <strong>Refl=
+ow flow management</strong>: What=E2=80=99s next for Reflow? Can DTL work o=
+utside of reflow? How should the flows be managed? Should there be a future=
+ for Reflow=E2=80=99s Trasnports, are they still relevant? Etc. along these=
+ lines.</p>
+<p local-id=3D"974ffc04-1ed0-4a44-b2b0-aeef3aa90b4b">=E2=80=94 <strong>Conf=
+igurable applications</strong>: How and where should we rely on configurati=
+on? Who will use the configuration? Should we allow reliance on external co=
+nfiguration at all?</p>
+<p local-id=3D"61478ac5-feff-49da-bc6a-5e9489ca16d0">=E2=80=94 What=E2=80=
+=99s achievable when?</p>
+<hr local-id=3D"9d36af89-e9f0-4389-8a44-e6a13e5d5cc8">
+<h3 local-id=3D"ce73cfc1-606a-48f8-a300-9ba6e3f191be" id=3D"ApplicationArch=
+itecture-QuickTo-DoList">Quick To-Do List</h3>
+<ul class=3D"inline-task-list" data-inline-tasks-content-id=3D"4842782721">
+<li class=3D"checked" data-inline-task-id=3D"2"><span class=3D"placeholder-=
+inline-tasks"><a class=3D"confluence-userlink user-mention current-user-men=
+tion" data-account-id=3D"712020:25ff2f21-b239-41a5-a405-fc97ca3c68e0" href=
+=3D"https://mcesys.atlassian.net/wiki/people/712020:25ff2f21-b239-41a5-a405=
+-fc97ca3c68e0?ref=3Dconfluence" target=3D"_blank" data-linked-resource-id=
+=3D"4556390412" data-linked-resource-version=3D"1" data-linked-resource-typ=
+e=3D"userinfo" data-base-url=3D"https://mcesys.atlassian.net/wiki">Yehuda G=
+ilead</a> setup meeting with all relevant devs to interview them about thei=
+r developer experience.</span></li>
+<li data-inline-task-id=3D"3"><span class=3D"placeholder-inline-tasks">How =
+is configuration being used across the org today IRL.</span></li>
+<li data-inline-task-id=3D"4"><span class=3D"placeholder-inline-tasks">Surv=
+ey current status: what metrics should use to measure this?</span></li>
+<li data-inline-task-id=3D"5"><span class=3D"placeholder-inline-tasks">What=
+ever=E2=80=99s not used a lot can be changed/discarded easily.</span></li>
+</ul>
+<hr local-id=3D"9aed6926-387b-4e7a-9bbc-0471e4389622">
+<h2 local-id=3D"c7b72680-92a6-4ad7-b327-6eb7749a926c" id=3D"ApplicationArch=
+itecture-HowDoWeEnvisionOurFutureWork">How Do We Envision Our Future Work</=
+h2>
+<ul local-id=3D"8bdc016d-f9a2-4918-89ef-ae803b6d816b">
+<li local-id=3D"fe992418-6cf4-4c18-8898-ad5a8d7cf4ee">
+<p local-id=3D"f5e0300a-e3a8-4725-b0ae-da7089022645">What is our special br=
+and? What do we bring to the engineering table that is rare or special?</p>=
+</li>
+<li local-id=3D"f485989c-6a78-488e-b0ab-77d1764c77fa">
+<p local-id=3D"8d29c108-38b7-4a0c-a6a8-826c02c28500">What is our vision of =
+that special MCE quality that we deliver?</p></li>
+<li local-id=3D"5b896f96-fe87-46f1-b5bc-eb14dc99f68c">
+<p local-id=3D"805a5b68-7ceb-45c8-8190-ab172d62c4ba">How do we want to expe=
+rience our everyday working cycle? Let=E2=80=99s dream about it.</p></li>
+<li local-id=3D"b59a0d32-5cfe-463a-8c81-3225d8c64004">
+<p local-id=3D"deeeb116-c99a-4e5e-8b70-5a1bb5bcc9f7">How do we want to adva=
+nce on our career path? And where to?</p></li>
+<li local-id=3D"364647c0-158f-4c13-b66a-96d8bdbf8d75">
+<p local-id=3D"96016af5-d72b-46f6-998e-6843ef544845">What are the horizons =
+we=E2=80=99d like to explore in the future?</p></li>
+<li local-id=3D"57ce40ec-83b9-48b5-9b04-17f262a25220">
+<p local-id=3D"a771d6b0-ba1f-44e1-b5f3-fcfae5c954ec">How do we envision eng=
+ineer involvement in all the stages of the product lifecycle?</p></li>
+<li local-id=3D"daab3bc0-bec4-49db-8834-d6e44b3efe8d">
+<p local-id=3D"ed3ecdea-46c6-42d9-9355-cfb945366e5b">What is a portrait of =
+the MCE Senior Engineer?</p></li>
+<li local-id=3D"4c270674-066f-492d-9a02-7a79605cdd5c">
+<p local-id=3D"07224e74-4a69-434f-9022-d885f45238a8">How does our future pr=
+oject look?</p></li>
+</ul>
+<h3 local-id=3D"b9a0b21d-d534-491d-abc3-32e7d0495fe8" id=3D"ApplicationArch=
+itecture-Thoughts&amp;ConclusionsWIP">Thoughts &amp; Conclusions <span data=
+-colorid=3D"a2vohdkhkm">WIP</span></h3>
+<p local-id=3D"e7e19f5d-d3de-4473-9118-96ea2e608ce5">=E2=80=94 The Developm=
+ent Cycle is a significant part of the entire product production cycle.</p>
+<p local-id=3D"6c6f05b8-b360-4939-974f-29f590f90404">=E2=80=94 Engineers sh=
+ould be involved in most of the production cycle phases:</p>
+<p local-id=3D"be520768-605a-4142-b772-bf22ea296701" style=3D"margin-left: =
+30.0px;">=E2=86=92 aware of the business goals</p>
+<p local-id=3D"fe37b115-cfbc-4dc0-aad9-96bf426ee20c" style=3D"margin-left: =
+30.0px;">=E2=86=92 early in the product decision phase (discovery)</p>
+<p local-id=3D"db429faf-7f5c-43a8-b2f6-82a9079d6225" style=3D"margin-left: =
+30.0px;">=E2=86=92 have a clear contract with the product &amp; BI about th=
+e requirements for engineering</p>
+<p local-id=3D"1b72c528-2e7f-4048-9b62-bc50369b6584" style=3D"margin-left: =
+30.0px;"><span data-colorid=3D"feud6uae6l">(=E2=86=92 have a clear contract=
+ with UX about their version management)</span></p>
+<p local-id=3D"9f3af8b9-7370-471a-bede-ee0fc96ac604" style=3D"margin-left: =
+30.0px;">=E2=86=92 have a clear Definition of Done of engineering outcomes:=
+ that should include usage monitoring, by the engineering team, to ensure t=
+hat what was released actually works as expected at the user=E2=80=99s edge=
+.</p>
+<p local-id=3D"dc76fd51-ecfd-4a1b-ba16-ee73dc5bd95a" style=3D"margin-left: =
+30.0px;">=E2=86=92 Draw conclusions based on actual user usage and suggest =
+new products to advance the known business direction.</p>
+<p local-id=3D"a52f539a-f52b-4689-ace8-c6fa2f5b0258">=E2=80=94 Engineering =
+outcomes are measured by two main metrics:</p>
+<p local-id=3D"7884b7b3-f684-4460-b0c2-f8bc9959ed5b" style=3D"margin-left: =
+30.0px;">=E2=86=92 <strong>Quality</strong> =E2=80=94 this should be unpack=
+ed, but in general, we=E2=80=99re talking about maintainability, availabili=
+ty &amp; attention to detail.</p>
+<p local-id=3D"30f8f85e-95d4-4bf6-bcda-4bb4a8613b00" style=3D"margin-left: =
+30.0px;">=E2=86=92 <strong>Velocity</strong> =E2=80=94 how quickly can we r=
+ealize stuff with quality, or even how responsive engineering is.</p>
+<h3 id=3D"ApplicationArchitecture-Quality">Quality</h3>
+<p local-id=3D"52872a03-9460-477a-a8ca-f260a09f3059">What is code quality i=
+n a nutshell? Firstly, we need to acknowledge that code is written for two =
+different clients: the machine &amp; the human engineer. In terms of the ma=
+chine, the code should be bug-free, secure &amp; performant. And in terms o=
+f the human, the code should be easily readable, coherently structured, and=
+ ready for easy &amp; fast maintenance.</p>
+<h3 local-id=3D"93e09fd6-973e-4ce5-bd0e-3c52ae9cd002" id=3D"ApplicationArch=
+itecture-Velocity">Velocity</h3>
+<p local-id=3D"269dffd4-53bc-472f-a9bb-1952c3353b06">Velocity is a metric t=
+hat describes the speed at which decisions can be made regarding any specif=
+ic code. Be it additions or fixes, bootstrapping or deployment =E2=80=94 in=
+ other words =E2=80=94 the ease of moving with a predictable speed from one=
+ step of development/deployment to the next. Meaning that it can become ver=
+y clear quickly what changes should be made where in order to reach the des=
+ired goal.<br>
+It=E2=80=99s a great general metric for an engineering team, which is depen=
+dent on various factors, like:</p>
+<ul local-id=3D"bfde3548-e947-4ec3-8359-976e29e8ee70">
+<li local-id=3D"2a1f6208-9978-4675-a3c5-b3de46e24122">
+<p local-id=3D"d1a701e2-84f1-4d7b-a476-2b6b0358dad4">whether the tasks and =
+the goals are clear</p></li>
+<li local-id=3D"39d18ba6-93e2-4abd-9d37-85d171941400">
+<p local-id=3D"50110fca-0272-4b0d-a217-a77fa9c25cca">whether there are entr=
+enched challenges that delay progress</p></li>
+<li local-id=3D"03bf7af3-2a8a-4588-aa16-d3cffc1859c1">
+<p local-id=3D"a82d91bc-28a5-4202-b26a-4278a475d33c">whether the initial st=
+ate of the code is legible and understandable</p></li>
+<li local-id=3D"b2993730-0da9-4991-8834-ce2d6c2e5b42">
+<p local-id=3D"e5fc0fd4-cca3-4908-969e-d04b9d7d40d2">whether there=E2=80=99=
+s a clear understanding of how to solve the challenge at hand</p></li>
+<li local-id=3D"03d003bb-8bdd-4316-952b-736bf4cab633">
+<p local-id=3D"76ca4f64-4c49-4f6b-81a8-78bc43267ca6">Whether there=E2=80=99=
+s a safe mechanism to introduce changes</p></li>
+<li local-id=3D"0cb51c62-6a17-47cb-ad0b-8c91abd4187f">
+<p local-id=3D"692fb567-fb0b-438c-97e9-746757660f80">whether there is the r=
+equired and suitable tooling for deployment &amp; observability</p></li>
+</ul>
+<p local-id=3D"990935ba-42c8-42f8-ba89-16332287ae06">=E2=A0=80In short, if =
+you=E2=80=99re healthy, you can have great velocity.</p>
+<h2 local-id=3D"a2b91b67-d0c7-4ce7-b590-1c1be05e5769" id=3D"ApplicationArch=
+itecture-CurrentStatus=E2=80=94DeveloperSurvey">Current Status =E2=80=94 De=
+veloper Survey</h2>
+<p local-id=3D"7df6f908-81ec-4f3e-a137-0963bfc22dfc"><a data-card-appearanc=
+e=3D"inline" href=3D"https://mcesys.atlassian.net/wiki/spaces/3695345667/pa=
+ges/4942987287/?draftShareId=3D2a045bf5-1c57-4f5a-9c30-b7857ff0de57" local-=
+id=3D"707d1f70-76f0-44f3-a256-c06e150a91ad" rel=3D"nofollow">https://mcesys=
+.atlassian.net/wiki/spaces/3695345667/pages/4942987287/?draftShareId=3D2a04=
+5bf5-1c57-4f5a-9c30-b7857ff0de57</a></p>
+<h2 local-id=3D"e4e46147-aed3-40bc-b288-2d1b6e8d9fc1" id=3D"ApplicationArch=
+itecture-(Client)ApplicationArchitecture">(Client) Application Architecture=
+</h2>
+<p>A bucket list of important ideas &amp; themes.</p>
+<ul local-id=3D"94006563-793e-4570-b68d-eb400a2cc902">
+<li local-id=3D"39f94502-519e-40af-956c-2fc1e3c50a20">
+<p local-id=3D"5877cc15-8284-4fe5-acf6-88c551e41fed">My opinions on this ma=
+tter are rather clear: <br>
+=E2=80=94 stupid parts<br>
+=E2=80=94 declarative<br>
+=E2=80=94 global state<br>
+=E2=80=94 each project is an entire application (and this is how it=E2=80=
+=99s viewed)<br>
+=E2=80=94 configuration in code<br>
+=E2=80=94 Each project is a unique butterfly<br>
+=E2=80=94 a great set of rules and best practices, that keeps things simple=
+, and allows a lot of creativity<br>
+=E2=80=94 GOAL: amazing maintenance</p></li>
+<li local-id=3D"474c837a-624e-41f6-b3b5-4aea9a3a938f">
+<p local-id=3D"816dbb49-3615-4b64-a703-135039b239f5">Eli=E2=80=99s ideal: a=
+llow MCE engineering to enjoy a startup-engineering culture:<br>
+=E2=80=94 Easy beginnings<br>
+=E2=80=94 Freedom of =E2=80=9Cmovement=E2=80=9D &amp; tool/architecture cho=
+ice<br>
+=E2=80=94 Loose coupling<br>
+=E2=80=94 Simple black-box components that do one thing!<br>
+=E2=80=94 Industry adopted tech and practices</p></li>
+<li local-id=3D"8336adfe-a43a-4d82-a1df-3a46f6b21599">
+<p local-id=3D"63cfd66c-22a9-4624-993b-1567e67fce6b">Current, but well-weat=
+hered</p></li>
+<li local-id=3D"e1140afd-90aa-4255-a54b-f32bf7bfcb3f">
+<p local-id=3D"6a41aeef-fa44-4afb-b1bf-91504192aa9b">I LOOOOOOOVE Redux =E2=
+=80=94 it=E2=80=99s a great paradigm if you know how to use it.</p></li>
+<li local-id=3D"6d91e1b9-ac2d-42c1-bb1b-f60c93cc0c37">
+<p local-id=3D"074ab0cc-8ec5-4346-8e75-d837432a3b13">Reactive UI</p></li>
+<li local-id=3D"a5367ff6-26b1-4756-b408-2c7b3316a8c0">
+<p local-id=3D"5e803439-24e0-49a5-bd51-827d8191dc04">Smart &amp; homegrown =
+design systems</p></li>
+<li local-id=3D"f2eb6be9-ebf3-48e8-8b29-f0769240a881">
+<p local-id=3D"4756aac5-0a55-44b8-a026-c882ed09d5a1">AUTOMATION!!!</p></li>
+<li local-id=3D"1c2e1259-a272-4b07-b6f4-4becf3969bdd">
+<p local-id=3D"10250123-e8c5-4631-b587-f601a9c055d5">Find the balance betwe=
+en global uniformity of architecture &amp; freedom of tools and technologie=
+s used in our projects.</p></li>
+<li local-id=3D"1dcc9009-47c8-4eb0-b621-6f8182d2a013">
+<p local-id=3D"95261aec-f3cb-4c4d-8823-3bed866befad">Optimized for user exp=
+erience!<br>
+=E2=80=94 meaning we should monitor usage and be in the loop directly, and =
+not only through CSMs or Product people.<br>
+=E2=80=94 Prioritize great UX planning and demand that UX people deliver hi=
+gh-standard specs<br>
+=E2=80=94 Performance (&amp; perceived performance) is part of our definiti=
+on of done.</p></li>
+</ul>
+<hr>
+<div id=3D"expander-705552675" class=3D"expand-container">
+<div id=3D"expander-control-705552675" class=3D"expand-control">
+<span class=3D"expand-control-icon"><img style=3D"vertical-align:middle;" c=
+lass=3D"expand-control-image" src=3D"7d85f39825b6f5aa4807c836602d945b6eb732=
+3b68d7e88648bfff674d1bdd6b" width=3D"16" height=3D"16"></span><span class=
+=3D"expand-control-text">Reflow &amp; Configuration</span>
+</div>
+<div id=3D"expander-content-705552675" class=3D"expand-content">
+<h2 local-id=3D"991fa72a-2aef-43a1-8e37-074d56d6150b" id=3D"ApplicationArch=
+itecture-TheFutureofReflow">The Future of Reflow</h2>
+<ul local-id=3D"e294effe-ca7a-44e5-896a-a244ef230e42">
+<li local-id=3D"2e742d90-cbe2-4d99-b758-96627d896217">
+<p local-id=3D"ccc807f9-a59b-4921-b9ab-8a905e5b0863">Survey:<br>
+=E2=80=94 How and where is Reflow used? What isn=E2=80=99t used? What is ba=
+rely used?<br>
+=E2=80=94 Who manages G3CBO? How? How often? To what purpose<br>
+=E2=80=94 What are reflow=E2=80=99s strong suits (that if remade will requi=
+re a considerable effort)?<br>
+=E2=80=94 What are its weak points?</p></li>
+<li local-id=3D"2e048798-df7c-4a94-9663-b2bdcecd2093">
+<p local-id=3D"fd0c2ee2-d643-454e-b5a4-61f064e192ff">How can we reuse reflo=
+w in different setups? (<a class=3D"confluence-userlink user-mention" data-=
+account-id=3D"712020:19f06981-1dc3-45ab-b73d-94e4c376d2d8" href=3D"https://=
+mcesys.atlassian.net/wiki/people/712020:19f06981-1dc3-45ab-b73d-94e4c376d2d=
+8?ref=3Dconfluence" target=3D"_blank" data-linked-resource-id=3D"4546101262=
+" data-linked-resource-version=3D"1" data-linked-resource-type=3D"userinfo"=
+ data-base-url=3D"https://mcesys.atlassian.net/wiki">Eli Cohen</a>)</p></li=
+>
+<li local-id=3D"a29989c4-5249-462b-8356-301616e56356">
+<p local-id=3D"43040bcc-87ef-40f4-90d3-d6f3b5ff3663">How should &amp; can R=
+eflow be remodeled? Where? For what purpose/project?</p></li>
+</ul>
+<h2 local-id=3D"5098b7d7-1125-4f45-a08c-31cf096f3afe" id=3D"ApplicationArch=
+itecture-ConfiguringMCEApplications">Configuring MCE Applications</h2>
+<ul local-id=3D"28c6899d-8aaf-449d-8213-f0d83215699f">
+<li local-id=3D"71a387d4-956f-4008-881f-a4680a749122">
+<p local-id=3D"bb532bf9-b020-44ff-8686-897ceb873740">Survey:<br>
+=E2=80=94 How and where, and by whom, the configuration is used?<br>
+=E2=80=94 Where are its pain points?</p></li>
+<li local-id=3D"7719e8de-3b2b-46bf-acd0-12ec87b652f9">
+<p local-id=3D"e672cfd4-9ee2-4e55-8ffe-9809d108bb1b">How do we deliver MCE =
+products as an ecosystem for managing various client functions and services=
+?</p></li>
+<li local-id=3D"ce6c8862-679d-4782-914a-7b85ef2e41ea">
+<p local-id=3D"97dad6bb-30c0-4c19-afa7-a22d9ad56b11">How does configuration=
+ factor in?</p></li>
+<li local-id=3D"242674fa-bbe4-4968-94e6-7f70e7c8aa6a">
+<p local-id=3D"94d4b515-9561-46c5-a27f-d9b8415e1ad3">How do we put limits o=
+n the configuration-based approach in order for us not to drown in the conf=
+iguration-hell antipattern?</p></li>
+<li local-id=3D"8694346a-e0a8-462d-b657-1f8a739620ce">
+<p local-id=3D"89231c9f-a159-4c9c-91f4-b9032e6efc86">What are the current G=
+3CBO strong points that we want to conserve &amp; use in future?</p></li>
+</ul>
+</div>
+</div>
+    </div>
+</body>
+</html>
+------=_Part_694_1951583801.1769951302100
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/7d85f39825b6f5aa4807c836602d945b6eb7323b68d7e88648bfff674d1bdd6b
+
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gAAAAFVBMVEX/
+//9wcHBwcHBwcHBwcHBwcHBwcHA3RenHAAAAB3RSTlMAZoiZzN3/SzZomQAAAAlwSFlzAAALEgAA
+CxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAUdEVYdENy
+ZWF0aW9uIFRpbWUANi8xLzEzOKlF0AAAACFJREFUCJljYCATsCgwqIAZTMnMyRAhsTABCIMxkVxT
+GQCLcwHyUKXpLgAAAABJRU5ErkJggg==
+------=_Part_694_1951583801.1769951302100--
