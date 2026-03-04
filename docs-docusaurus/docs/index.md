@@ -11,9 +11,17 @@ sidebar_position: 0
 
 Welcome to MCE's architecture documentation. This guide will help you understand our front-end architecture and best practices.
 
-## Quick Start
+## Start Here
 
-1. **[Introduction](./client-architecture/00-introduction)** - Start here to understand the philosophy
+**New to the Ripe Method?** Read the complete onboarding guide — it covers everything in one place, with code examples, diagrams, and just enough humor to keep you awake:
+
+> **[The Ripe Method — Complete Onboarding Guide](./onboarding)**
+
+## Deep Dives
+
+Once you've read the onboarding guide, explore the detailed reference docs:
+
+1. **[Introduction](./client-architecture/00-introduction)** - The philosophy behind the method
 2. **[The Elements](./client-architecture/01-elements)** - The 16 guiding principles
 3. **[Global State](./client-architecture/02-global-state)** - Commandment I: One Global State
 4. **[Information Flow](./client-architecture/03-information-flow)** - Commandment II: Unidirectional Flow

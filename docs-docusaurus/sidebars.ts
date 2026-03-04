@@ -3,6 +3,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   docs: [
     'index', // Homepage
+    'onboarding', // The complete onboarding guide
     {
       type: 'category',
       label: 'Client Architecture',
